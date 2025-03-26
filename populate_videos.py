@@ -3,8 +3,6 @@ import sqlite3
 def add_video(file_id):
     conn = sqlite3.connect('videos.db')
     cursor = conn.cursor()
-
-    # Create table if it doesn't exist
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS videos (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -12,7 +10,6 @@ def add_video(file_id):
     )
     ''')
 
-    # Insert video file_id into the table
     cursor.execute("INSERT INTO videos (file_id) VALUES (?)", (file_id,))
     conn.commit()
     conn.close()

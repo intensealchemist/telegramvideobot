@@ -121,7 +121,7 @@ async def error_handler(update: Update, context: CallbackContext):
     logger.error(msg="Exception while handling an update:", exc_info=context.error)
 
 def main():
-    application = Application.builder().token("7262552574:AAEjZCYAa-3PGgpl0X_o6lh4457X0pfqPAE").build()
+    application = Application.builder().token("ADD YOUR TELEGRAM BOT TOKEN").build()
 
     application.add_handler(CommandHandler("start", start))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
